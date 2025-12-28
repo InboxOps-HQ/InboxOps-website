@@ -1,16 +1,19 @@
 <!doctype html>
 <html lang="de" data-lang="de">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="InboxOps – Email-first Ticketing für Freelancer & KMUs. Modern UI, schneller Start, klare Prozesse." />
+  <meta name="description"
+    content="InboxOps – Email-first Ticketing für Freelancer & KMUs. Modern UI, schneller Start, klare Prozesse." />
   <meta name="color-scheme" content="dark" />
   <title>InboxOps – Email-first Ticketing</title>
 
   <meta name="theme-color" content="#0b1220" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <meta property="og:title" content="InboxOps – Email-first Ticketing" />
-  <meta property="og:description" content="InboxOps – Email-first Ticketing für Freelancer & KMUs. Modern UI, schneller Start, klare Prozesse." />
+  <meta property="og:description"
+    content="InboxOps – Email-first Ticketing für Freelancer & KMUs. Modern UI, schneller Start, klare Prozesse." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="/" />
   <meta property="og:image" content="logo.png" />
@@ -19,8 +22,13 @@
   <meta name="twitter:description" content="InboxOps – Email-first Ticketing für Freelancer & KMUs." />
   <meta name="twitter:image" content="/og.png" />
   <link rel="canonical" href="/" />
-  <link rel="preload" href="styles.min.css" as="style" />
-  <link rel="stylesheet" href="styles.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
@@ -29,8 +37,7 @@
     <div class="wrap">
       <div class="nav-inner">
         <a class="brand" href="#top">
-          <img src="logo.png" alt="InboxOps" class="logo-img" />
-          <strong>InboxOps</strong>
+          <img src="favicon.png" alt="InboxOps" class="logo-img" />
         </a>
 
         <nav class="nav-links" aria-label="Navigation">
@@ -49,7 +56,8 @@
             <button id="lang-de" class="active" type="button">DE</button>
             <button id="lang-en" type="button">EN</button>
           </div>
-          <a class="btn primary" id="ctaTop" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request">Beta →</a>
+          <a class="btn primary" id="ctaTop" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request">Beta
+            →</a>
         </div>
       </div>
     </div>
@@ -58,9 +66,9 @@
   <main id="top">
     <section class="hero">
       <div class="wrap">
+        <img src="logo.png" alt="InboxOps" class="logo-hero" />
         <div class="hero-grid">
           <div>
-            <img src="logo.png" alt="InboxOps" class="logo-hero" />
             <div data-lang="de">
               <h1>Email-first Ticketing, das sich nicht nach 2005 anfühlt.</h1>
               <p class="lead">
@@ -107,15 +115,16 @@
           <div class="card">
             <div class="card-pad">
               <div class="card-header">
-                  <strong class="small-strong" data-lang="de">InboxOps – Kurzüberblick</strong>
-                  <strong class="small-strong" data-lang="en">InboxOps – Quick overview</strong>
-                  <span class="beta-pill">Beta</span>
-                </div>
+                <strong class="small-strong" data-lang="de">InboxOps – Kurzüberblick</strong>
+                <strong class="small-strong" data-lang="en">InboxOps – Quick overview</strong>
+                <span class="beta-pill">Beta</span>
+              </div>
 
-                <p class="mini mt-10" data-lang="de">
-                Für Teams, die Support per E-Mail machen und dabei Tickets, Status, Verantwortung und Kontext sauber halten wollen.
+              <p class="mini mt-10" data-lang="de">
+                Für Teams, die Support per E-Mail machen und dabei Tickets, Status, Verantwortung und Kontext sauber
+                halten wollen.
               </p>
-                <p class="mini mt-10" data-lang="en">
+              <p class="mini mt-10" data-lang="en">
                 For teams that handle support via email and want clean tickets, clear status, ownership, and context.
               </p>
 
@@ -147,7 +156,8 @@
               </div>
 
               <div class="note" data-lang="de">
-                Hinweis: Diese Seite ist eine Minimal-Landingpage (z. B. für Stripe-Verifizierung) und wird laufend erweitert.
+                Hinweis: Diese Seite ist eine Minimal-Landingpage (z. B. für Stripe-Verifizierung) und wird laufend
+                erweitert.
               </div>
               <div class="note" data-lang="en">
                 Note: This is a minimal landing page (e.g., for Stripe verification) and will be expanded over time.
@@ -228,7 +238,8 @@
             <h3>Starter</h3>
             <p class="desc" data-lang="de">Für Solo-Freelancer und kleine Setups.</p>
             <p class="desc" data-lang="en">For solo freelancers and small setups.</p>
-            <div class="amount">12 € <small data-lang="de">/ Monat (jährlich)</small><small data-lang="en">/ month (billed yearly)</small></div>
+            <div class="amount">12 € <small data-lang="de">/ Monat (jährlich)</small><small data-lang="en">/ month
+                (billed yearly)</small></div>
             <ul>
               <li data-lang="de">1 Inbox</li>
               <li data-lang="en">1 inbox</li>
@@ -247,7 +258,8 @@
             <h3>Team</h3>
             <p class="desc" data-lang="de">Für KMUs mit mehreren Mitarbeitern.</p>
             <p class="desc" data-lang="en">For small businesses with multiple users.</p>
-            <div class="amount">29 € <small data-lang="de">/ Monat (jährlich)</small><small data-lang="en">/ month (billed yearly)</small></div>
+            <div class="amount">29 € <small data-lang="de">/ Monat (jährlich)</small><small data-lang="en">/ month
+                (billed yearly)</small></div>
             <ul>
               <li data-lang="de">3 Inboxes</li>
               <li data-lang="en">3 inboxes</li>
@@ -264,7 +276,8 @@
             <h3>Business</h3>
             <p class="desc" data-lang="de">Für höhere Anforderungen & Integrationen.</p>
             <p class="desc" data-lang="en">For advanced needs & integrations.</p>
-            <div class="amount">59 € <small data-lang="de">/ Monat (jährlich)</small><small data-lang="en">/ month (billed yearly)</small></div>
+            <div class="amount">59 € <small data-lang="de">/ Monat (jährlich)</small><small data-lang="en">/ month
+                (billed yearly)</small></div>
             <ul>
               <li data-lang="de">10 Inboxes</li>
               <li data-lang="en">10 inboxes</li>
@@ -279,10 +292,13 @@
         </div>
 
         <div class="note" data-lang="de">
-          Monatliche Abrechnung geplant (etwas teurer als jährlich). Preise & Pläne können sich in der Beta noch ändern.
+          Monatliche Abrechnung geplant (etwas teurer als jährlich). Preise & Pläne können sich in der Beta noch
+          ändern.<br>
+          Alle Preise zzgl. USt. wo zutreffend.
         </div>
         <div class="note" data-lang="en">
-          Monthly billing planned (slightly higher than yearly). Pricing may change during beta.
+          Monthly billing planned (slightly higher than yearly). Pricing may change during beta.<br>
+          All prices excl. VAT where applicable.
         </div>
       </div>
     </section>
@@ -301,8 +317,10 @@
             </div>
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request" data-lang="de">Beta anfragen →</a>
-            <a class="btn primary" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request" data-lang="en">Request beta →</a>
+            <a class="btn primary" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request"
+              data-lang="de">Beta anfragen →</a>
+            <a class="btn primary" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request"
+              data-lang="en">Request beta →</a>
             <a class="btn" href="#faq">FAQ</a>
           </div>
         </div>
@@ -321,7 +339,8 @@
               <span data-lang="de">Gibt es ein Free-Tier?</span>
               <span data-lang="en">Is there a free tier?</span>
             </summary>
-            <p data-lang="de">Geplant ist eine zeitlich begrenzte Testphase (z. B. 30 Tage) statt eines dauerhaften Free-Tiers.</p>
+            <p data-lang="de">Geplant ist eine zeitlich begrenzte Testphase (z. B. 30 Tage) statt eines dauerhaften
+              Free-Tiers.</p>
             <p data-lang="en">We plan a time-limited trial (e.g., 30 days) instead of a permanent free tier.</p>
           </details>
 
@@ -330,7 +349,8 @@
               <span data-lang="de">Wie funktioniert E-Mail Versand/Empfang?</span>
               <span data-lang="en">How does email sending/receiving work?</span>
             </summary>
-            <p data-lang="de">InboxOps ist Email-first: eingehende Nachrichten erzeugen Tickets, Antworten gehen per E-Mail raus.</p>
+            <p data-lang="de">InboxOps ist Email-first: eingehende Nachrichten erzeugen Tickets, Antworten gehen per
+              E-Mail raus.</p>
             <p data-lang="en">InboxOps is email-first: inbound messages become tickets, replies go out by email.</p>
           </details>
 
@@ -339,7 +359,8 @@
               <span data-lang="de">Gibt es Integrationen?</span>
               <span data-lang="en">Do you offer integrations?</span>
             </summary>
-            <p data-lang="de">Geplant: Jira, GitHub, Webhooks, Automationen. Fokus zuerst auf ein stabiles Kernprodukt.</p>
+            <p data-lang="de">Geplant: Jira, GitHub, Webhooks, Automationen. Fokus zuerst auf ein stabiles Kernprodukt.
+            </p>
             <p data-lang="en">Planned: Jira, GitHub, webhooks, automations. First focus: a stable core product.</p>
           </details>
 
@@ -348,7 +369,8 @@
               <span data-lang="de">Datenschutz & AVV?</span>
               <span data-lang="en">Privacy & DPA?</span>
             </summary>
-            <p data-lang="de">Es wird eine DSGVO-konforme Datenschutzerklärung und ein AVV bereitgestellt (in Arbeit).</p>
+            <p data-lang="de">Es wird eine DSGVO-konforme Datenschutzerklärung und ein AVV bereitgestellt (in Arbeit).
+            </p>
             <p data-lang="en">We will provide a GDPR-compliant privacy policy and DPA (work in progress).</p>
           </details>
         </div>
@@ -365,8 +387,10 @@
 
         <a class="btn primary" href="mailto:hello@inboxops.app">hello@inboxops.app</a>
 
-        <div class="note" data-lang="de">Wenn du schon weißt, was du brauchst: Teamgröße, Anzahl Inboxes, grober E-Mail-Traffic.</div>
-        <div class="note" data-lang="en">If you already know your needs: team size, inbox count, rough email volume.</div>
+        <div class="note" data-lang="de">Wenn du schon weißt, was du brauchst: Teamgröße, Anzahl Inboxes, grober
+          E-Mail-Traffic.</div>
+        <div class="note" data-lang="en">If you already know your needs: team size, inbox count, rough email volume.
+        </div>
       </div>
     </section>
   </main>
@@ -387,42 +411,49 @@
 
           <a href="imprint.html" data-lang="de">Impressum</a>
           <a href="privacy.html" data-lang="de">Datenschutz</a>
+          <a href="terms.html" data-lang="de">AGB</a>
 
           <a href="imprint.html" data-lang="en">Legal Notice</a>
           <a href="privacy.html" data-lang="en">Privacy</a>
+          <a href="terms.html" data-lang="en">Terms</a>
         </div>
       </div>
-      <div class="note" style="margin-top:14px;">© <span id="y"></span> InboxOps.</div>
+      <div class="note" style="margin-top:14px;">
+        © <span id="y"></span> InboxOps.
+        <span data-lang="de">Zahlungen sicher abgewickelt über Stripe.</span>
+        <span data-lang="en">Payments processed securely by Stripe.</span>
+      </div>
     </div>
   </footer>
 
   <script>
-(function(){
-  const root = document.documentElement;
+    (function () {
+      const root = document.documentElement;
 
-  function safe(id){ return document.getElementById(id); }
+      function safe(id) { return document.getElementById(id); }
 
-  function setLang(lang){
-    root.setAttribute('data-lang', lang);
-    try{
-      safe('lang-de')?.classList.toggle('active', lang === 'de');
-      safe('lang-en')?.classList.toggle('active', lang === 'en');
-      localStorage.setItem('inboxops_lang', lang);
-    }catch(e){}
-  }
+      function setLang(lang) {
+        root.setAttribute('data-lang', lang);
+        try {
+          safe('lang-de')?.classList.toggle('active', lang === 'de');
+          safe('lang-en')?.classList.toggle('active', lang === 'en');
+          localStorage.setItem('inboxops_lang', lang);
+        } catch (e) { }
+      }
 
-  let saved = null;
-  try{ saved = localStorage.getItem('inboxops_lang'); }catch(e){}
+      let saved = null;
+      try { saved = localStorage.getItem('inboxops_lang'); } catch (e) { }
 
-  const browser = (navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en';
-  setLang(saved || browser);
+      const browser = (navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en';
+      setLang(saved || browser);
 
-  safe('lang-de')?.addEventListener('click', ()=>setLang('de'));
-  safe('lang-en')?.addEventListener('click', ()=>setLang('en'));
+      safe('lang-de')?.addEventListener('click', () => setLang('de'));
+      safe('lang-en')?.addEventListener('click', () => setLang('en'));
 
-  const y = document.getElementById('y');
-  if(y) y.textContent = new Date().getFullYear();
-})();
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
+
 </html>

@@ -1,27 +1,46 @@
 <!doctype html>
 <html lang="de" data-lang="de">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="dark" />
   <title>Impressum – InboxOps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="nav">
     <div class="wrap">
       <div class="nav-inner">
         <a class="brand" href="index.html">
-          <span class="logo" aria-hidden="true"></span>
+          <img src="favicon.png" alt="InboxOps" class="logo-img" />
           <strong>InboxOps</strong>
         </a>
 
-        <div style="display:flex; gap:10px; align-items:center;">
+        <nav class="nav-links" aria-label="Navigation">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="imprint.html" class="legal-link" data-lang="de">Impressum</a>
+          <a href="privacy.html" class="legal-link" data-lang="de">Datenschutz</a>
+          <a href="imprint.html" class="legal-link" data-lang="en">Legal Notice</a>
+          <a href="privacy.html" class="legal-link" data-lang="en">Privacy</a>
+        </nav>
+
+        <div class="top-controls">
           <div class="lang" aria-label="Language switch">
             <button id="lang-de" class="active" type="button">DE</button>
             <button id="lang-en" type="button">EN</button>
           </div>
-          <a class="btn primary" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request">Beta →</a>
+          <a class="btn primary" id="ctaTop" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request">Beta
+            →</a>
         </div>
       </div>
     </div>
@@ -47,7 +66,8 @@
               <strong>Unternehmensform / Legal form:</strong> Sole proprietor (Austria)<br />
               <strong>Produkt / Product:</strong> InboxOps (SaaS)
             </p>
-            <div class="note" data-lang="de">Hinweis: Adresse wird vor Go-Live ggf. auf eine Geschäftsadresse geändert.</div>
+            <div class="note" data-lang="de">Hinweis: Adresse wird vor Go-Live ggf. auf eine Geschäftsadresse geändert.
+            </div>
             <div class="note" data-lang="en">Note: Address may be updated to a business address before go-live.</div>
           </div>
 
@@ -55,7 +75,8 @@
             <h3 data-lang="de">Haftungshinweis</h3>
             <h3 data-lang="en">Disclaimer</h3>
             <p data-lang="de">
-              Inhalte werden mit Sorgfalt erstellt, dennoch kann keine Gewähr für Richtigkeit/Vollständigkeit übernommen werden.
+              Inhalte werden mit Sorgfalt erstellt, dennoch kann keine Gewähr für Richtigkeit/Vollständigkeit übernommen
+              werden.
               Diese Seite ersetzt keine Rechtsberatung.
             </p>
             <p data-lang="en">
@@ -65,40 +86,62 @@
           </div>
         </div>
 
-        <div style="margin-top:16px;">
-          <a class="btn" href="index.html">← Back</a>
-          <a class="btn" href="privacy.html" data-lang="de">Datenschutz</a>
-          <a class="btn" href="privacy.html" data-lang="en">Privacy</a>
-        </div>
+
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap">
-      <div class="note">© <span id="y"></span> InboxOps.</div>
+      <div class="footer-grid">
+        <div>
+          <strong>InboxOps</strong>
+          <div class="note" data-lang="de">Email-first Ticketing für Freelancer & KMUs.</div>
+          <div class="note" data-lang="en">Email-first ticketing for freelancers & small businesses.</div>
+        </div>
+        <div class="footlinks">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Contact</a>
+
+          <a href="imprint.html" data-lang="de">Impressum</a>
+          <a href="privacy.html" data-lang="de">Datenschutz</a>
+          <a href="terms.html" data-lang="de">AGB</a>
+
+          <a href="imprint.html" data-lang="en">Legal Notice</a>
+          <a href="privacy.html" data-lang="en">Privacy</a>
+          <a href="terms.html" data-lang="en">Terms</a>
+        </div>
+      </div>
+      <div class="note" style="margin-top:14px;">
+        © <span id="y"></span> InboxOps.
+        <span data-lang="de">Zahlungen sicher abgewickelt über Stripe.</span>
+        <span data-lang="en">Payments processed securely by Stripe.</span>
+      </div>
     </div>
   </footer>
 
   <script>
-(function(){
-  const root = document.documentElement;
-  function safe(id){ return document.getElementById(id); }
-  function setLang(lang){
-    root.setAttribute('data-lang', lang);
-    try{
-      safe('lang-de')?.classList.toggle('active', lang === 'de');
-      safe('lang-en')?.classList.toggle('active', lang === 'en');
-      localStorage.setItem('inboxops_lang', lang);
-    }catch(e){}
-  }
-  let saved=null; try{ saved=localStorage.getItem('inboxops_lang'); }catch(e){}
-  const browser=(navigator.language||'de').toLowerCase().startsWith('de')?'de':'en';
-  setLang(saved||browser);
-  safe('lang-de')?.addEventListener('click', ()=>setLang('de'));
-  safe('lang-en')?.addEventListener('click', ()=>setLang('en'));
-  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
-})();
+    (function () {
+      const root = document.documentElement;
+      function safe(id) { return document.getElementById(id); }
+      function setLang(lang) {
+        root.setAttribute('data-lang', lang);
+        try {
+          safe('lang-de')?.classList.toggle('active', lang === 'de');
+          safe('lang-en')?.classList.toggle('active', lang === 'en');
+          localStorage.setItem('inboxops_lang', lang);
+        } catch (e) { }
+      }
+      let saved = null; try { saved = localStorage.getItem('inboxops_lang'); } catch (e) { }
+      const browser = (navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en';
+      setLang(saved || browser);
+      safe('lang-de')?.addEventListener('click', () => setLang('de'));
+      safe('lang-en')?.addEventListener('click', () => setLang('en'));
+      const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
+
 </html>
