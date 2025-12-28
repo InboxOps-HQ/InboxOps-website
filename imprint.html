@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Impressum – InboxOps</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="logo" aria-hidden="true"></span>
+          <strong>InboxOps</strong>
+        </a>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <div class="lang" aria-label="Language switch">
+            <button id="lang-de" class="active" type="button">DE</button>
+            <button id="lang-en" type="button">EN</button>
+          </div>
+          <a class="btn primary" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request">Beta →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h1 class="section-title" data-lang="de">Impressum</h1>
+        <h1 class="section-title" data-lang="en">Legal Notice</h1>
+
+        <p class="section-sub" data-lang="de">Angaben gemäß §5 ECG / §24 MedienG (Österreich).</p>
+        <p class="section-sub" data-lang="en">Information pursuant to Austrian law (§5 ECG / §24 MedienG).</p>
+
+        <div class="legal-grid" style="display:grid; grid-template-columns: 1.2fr .8fr; gap:14px;">
+          <div class="feature">
+            <h3 data-lang="de">Betreiber</h3>
+            <h3 data-lang="en">Owner</h3>
+            <p>
+              <strong>Betreiber / Owner:</strong> Michael David Guggenbichler<br />
+              <strong>Adresse / Address:</strong> Am langen Felde 46, 1220 Wien, Austria<br />
+              <strong>E-Mail:</strong> <a href="mailto:hello@inboxops.app">hello@inboxops.app</a><br />
+              <strong>Unternehmensform / Legal form:</strong> Sole proprietor (Austria)<br />
+              <strong>Produkt / Product:</strong> InboxOps (SaaS)
+            </p>
+            <div class="note" data-lang="de">Hinweis: Adresse wird vor Go-Live ggf. auf eine Geschäftsadresse geändert.</div>
+            <div class="note" data-lang="en">Note: Address may be updated to a business address before go-live.</div>
+          </div>
+
+          <div class="feature">
+            <h3 data-lang="de">Haftungshinweis</h3>
+            <h3 data-lang="en">Disclaimer</h3>
+            <p data-lang="de">
+              Inhalte werden mit Sorgfalt erstellt, dennoch kann keine Gewähr für Richtigkeit/Vollständigkeit übernommen werden.
+              Diese Seite ersetzt keine Rechtsberatung.
+            </p>
+            <p data-lang="en">
+              Content is prepared with care, but no warranty is given for accuracy or completeness.
+              This page is not legal advice.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <a class="btn" href="index.html">← Back</a>
+          <a class="btn" href="privacy.html" data-lang="de">Datenschutz</a>
+          <a class="btn" href="privacy.html" data-lang="en">Privacy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="note">© <span id="y"></span> InboxOps.</div>
+    </div>
+  </footer>
+
+  <script>
+(function(){
+  const root = document.documentElement;
+  function safe(id){ return document.getElementById(id); }
+  function setLang(lang){
+    root.setAttribute('data-lang', lang);
+    try{
+      safe('lang-de')?.classList.toggle('active', lang === 'de');
+      safe('lang-en')?.classList.toggle('active', lang === 'en');
+      localStorage.setItem('inboxops_lang', lang);
+    }catch(e){}
+  }
+  let saved=null; try{ saved=localStorage.getItem('inboxops_lang'); }catch(e){}
+  const browser=(navigator.language||'de').toLowerCase().startsWith('de')?'de':'en';
+  setLang(saved||browser);
+  safe('lang-de')?.addEventListener('click', ()=>setLang('de'));
+  safe('lang-en')?.addEventListener('click', ()=>setLang('en'));
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>

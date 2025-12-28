@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Datenschutzerklärung – InboxOps</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="logo" aria-hidden="true"></span>
+          <strong>InboxOps</strong>
+        </a>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <div class="lang" aria-label="Language switch">
+            <button id="lang-de" class="active" type="button">DE</button>
+            <button id="lang-en" type="button">EN</button>
+          </div>
+          <a class="btn primary" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request">Beta →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <h1 class="section-title" data-lang="de">Datenschutzerklärung</h1>
+        <h1 class="section-title" data-lang="en">Privacy Policy</h1>
+
+        <p class="section-sub" data-lang="de">
+          Kurzfassung (für frühe Phase / z. B. Stripe-Verifizierung). Vor Go-Live juristisch finalisieren lassen.
+        </p>
+        <p class="section-sub" data-lang="en">
+          Short version (early phase / e.g. Stripe verification). Please finalize with legal review before go-live.
+        </p>
+
+        <div class="feature">
+          <h3 data-lang="de">Verarbeitung</h3>
+          <h3 data-lang="en">Processing</h3>
+
+          <p data-lang="de">
+            InboxOps verarbeitet personenbezogene Daten ausschließlich zur Bereitstellung der Support-Plattform
+            (Accounts, Tickets, E-Mails und Anhänge).
+          </p>
+          <p data-lang="en">
+            InboxOps processes personal data solely to provide the support platform
+            (accounts, tickets, emails, and attachments).
+          </p>
+
+          <p data-lang="de">
+            <strong>Zweck:</strong> Betrieb der Plattform, Support, Abrechnung.<br />
+            <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b &amp; f DSGVO.<br />
+            <strong>Speicherdauer:</strong> Dauer des Vertragsverhältnisses bzw. gesetzliche Aufbewahrungspflichten.<br />
+            <strong>Betroffenenrechte:</strong> Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch.<br />
+            <strong>Kontakt:</strong> <a href="mailto:hello@inboxops.app">hello@inboxops.app</a>
+          </p>
+
+          <p data-lang="en">
+            <strong>Purpose:</strong> Operating the platform, support, billing.<br />
+            <strong>Legal basis:</strong> Art. 6(1)(b) &amp; (f) GDPR.<br />
+            <strong>Retention:</strong> Duration of the contract and/or statutory retention obligations.<br />
+            <strong>Your rights:</strong> Access, rectification, erasure, restriction, portability, objection.<br />
+            <strong>Contact:</strong> <a href="mailto:hello@inboxops.app">hello@inboxops.app</a>
+          </p>
+        </div>
+
+        <div style="margin-top:16px;">
+          <a class="btn" href="index.html">← Back</a>
+          <a class="btn" href="imprint.html" data-lang="de">Impressum</a>
+          <a class="btn" href="imprint.html" data-lang="en">Legal Notice</a>
+        </div>
+
+        <div class="note" style="margin-top:14px;" data-lang="de">
+          Diese Seite ersetzt keine Rechtsberatung. Bitte Datenschutzerklärung & AVV vor Live juristisch prüfen lassen.
+        </div>
+        <div class="note" style="margin-top:14px;" data-lang="en">
+          This page is not legal advice. Please have your privacy policy & DPA reviewed before going live.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="note">© <span id="y"></span> InboxOps.</div>
+    </div>
+  </footer>
+
+  <script>
+(function(){
+  const root = document.documentElement;
+  function safe(id){ return document.getElementById(id); }
+  function setLang(lang){
+    root.setAttribute('data-lang', lang);
+    try{
+      safe('lang-de')?.classList.toggle('active', lang === 'de');
+      safe('lang-en')?.classList.toggle('active', lang === 'en');
+      localStorage.setItem('inboxops_lang', lang);
+    }catch(e){}
+  }
+  let saved=null; try{ saved=localStorage.getItem('inboxops_lang'); }catch(e){}
+  const browser=(navigator.language||'de').toLowerCase().startsWith('de')?'de':'en';
+  setLang(saved||browser);
+  safe('lang-de')?.addEventListener('click', ()=>setLang('de'));
+  safe('lang-en')?.addEventListener('click', ()=>setLang('en'));
+  const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+})();
+  </script>
+</body>
+</html>
