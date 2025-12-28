@@ -49,25 +49,10 @@ a{color:inherit}
   text-decoration:none;
 }
 
-.logo{
+.logo-img{
   width:34px; height:34px;
   border-radius:12px;
-  background:
-    radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.55), transparent 60%),
-    linear-gradient(135deg, var(--accent2), var(--accent));
   box-shadow: 0 10px 25px rgba(0,0,0,.25);
-  position:relative;
-  overflow:hidden;
-}
-
-.logo:before{
-  content:"";
-  position:absolute;
-  inset:7px;
-  border-radius:10px;
-  border:2px solid rgba(255,255,255,.55);
-  clip-path: polygon(0 0, 62% 0, 62% 38%, 100% 38%, 100% 100%, 0 100%);
-  opacity:.55;
 }
 
 .brand strong{font-size:15px; letter-spacing:.2px}
