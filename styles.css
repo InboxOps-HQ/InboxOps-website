@@ -37,12 +37,31 @@ body {
   margin: 0;
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Roboto, sans-serif;
   color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.55;
+  position: relative;
+}
+
+/* Fixed background using pseudo-element to prevent scrolling issues */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
   background:
     radial-gradient(1200px 600px at 20% 10%, rgba(40, 156, 232, .15), transparent 60%),
     radial-gradient(900px 500px at 80% 20%, rgba(86, 205, 100, .12), transparent 55%),
     radial-gradient(900px 500px at 55% 90%, rgba(37, 103, 225, .10), transparent 55%),
     var(--bg);
-  line-height: 1.55;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* Prevent background from moving on mobile */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 h1,
@@ -64,7 +83,7 @@ a {
 .wrap {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 20px
+  padding: 0 clamp(16px, 4vw, 20px);
 }
 
 .nav {
@@ -81,7 +100,8 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 14px 0;
-  gap: 14px;
+  gap: clamp(8px, 2vw, 14px);
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -113,11 +133,18 @@ a {
   height: auto;
   margin-bottom: 12px;
   filter: drop-shadow(0 10px 20px rgba(37, 103, 225, 0.3));
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .hero-logo-icon {
+    width: 180px;
+  }
 }
 
 .hero-logo-text {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 60px;
+  font-size: clamp(36px, 8vw, 60px);
   font-weight: 700;
   letter-spacing: -2px;
   background: white;
@@ -300,6 +327,51 @@ a {
   }
 }
 
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 0 20px;
+  }
+
+  .hero-logo-container {
+    margin: 0 auto 30px;
+  }
+
+  .top-controls {
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .lang button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .nav-inner {
+    padding: 12px 0;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .price {
+    padding: 14px;
+  }
+}
+
 h1 {
   margin: 0 0 12px;
   font-size: clamp(30px, 4vw, 44px);
@@ -350,7 +422,7 @@ h1 {
 }
 
 .card-pad {
-  padding: 12px
+  padding: clamp(10px, 2vw, 12px)
 }
 
 .mini {
@@ -364,6 +436,12 @@ h1 {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .statgrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stat {
@@ -386,11 +464,11 @@ h1 {
 }
 
 section {
-  padding: 28px 0
+  padding: clamp(20px, 5vw, 28px) 0
 }
 
 .section-title {
-  font-size: 22px;
+  font-size: clamp(20px, 4vw, 22px);
   margin: 0 0 10px;
   letter-spacing: -.2px;
 }
@@ -417,8 +495,14 @@ section {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, .05);
   border-radius: var(--radius);
-  padding: 16px;
+  padding: clamp(14px, 3vw, 16px);
   min-height: 130px;
+}
+
+@media (max-width: 600px) {
+  .feature {
+    min-height: auto;
+  }
 }
 
 .feature h3 {
@@ -483,7 +567,7 @@ section {
 }
 
 .amount {
-  font-size: 30px;
+  font-size: clamp(24px, 5vw, 30px);
   letter-spacing: -.5px;
   margin: 8px 0
 }
@@ -519,6 +603,17 @@ li {
   .cta {
     flex-direction: column;
     align-items: flex-start
+  }
+}
+
+@media (max-width: 600px) {
+  .cta {
+    padding: 14px;
+  }
+
+  .cta .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -565,7 +660,7 @@ details p {
 }
 
 footer {
-  padding: 30px 0 40px;
+  padding: clamp(24px, 5vw, 30px) 0 clamp(32px, 6vw, 40px);
   border-top: 1px solid var(--border);
   color: var(--muted2);
   font-size: 13px;
@@ -577,6 +672,18 @@ footer {
   gap: 14px;
   flex-wrap: wrap;
   align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footlinks {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 .footlinks {
@@ -610,4 +717,164 @@ html:not([data-lang]) body [data-lang="de"] {
 html[data-lang="de"] body [data-lang="de"],
 html[data-lang="en"] body [data-lang="en"] {
   display: block
+}
+
+/* Contact Form Styles */
+.contact-form {
+  max-width: 600px;
+  margin-top: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .06);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgba(37, 103, 225, .5);
+  background: rgba(255, 255, 255, .08);
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown),
+.form-group select:invalid:not(:focus),
+.form-group textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: rgba(255, 100, 100, .5);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.error-message {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(255, 100, 100, .9);
+  min-height: 18px;
+}
+
+.form-hint {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted2);
+}
+
+.form-status {
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form-status.success {
+  background: rgba(86, 205, 100, .15);
+  border: 1px solid rgba(86, 205, 100, .3);
+  color: rgba(86, 205, 100, .9);
+}
+
+.form-status.error {
+  background: rgba(255, 100, 100, .15);
+  border: 1px solid rgba(255, 100, 100, .3);
+  color: rgba(255, 100, 100, .9);
+}
+
+.form-status.loading {
+  background: rgba(58, 160, 255, .15);
+  border: 1px solid rgba(58, 160, 255, .3);
+  color: rgba(58, 160, 255, .9);
+}
+
+#submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .contact-form {
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Responsive improvements for legal pages and general content */
+@media (max-width: 600px) {
+  /* Ensure text doesn't overflow on mobile */
+  body {
+    word-wrap: break-word;
+    overflow-x: hidden;
+  }
+
+  /* Better spacing for legal content */
+  h3 {
+    font-size: clamp(16px, 4vw, 18px);
+    margin-top: 20px;
+  }
+
+  .mini {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* Ensure links are tappable on mobile */
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Prevent horizontal scroll on all devices */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
 }

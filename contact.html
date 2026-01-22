@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="Kontakt – InboxOps. Fragen, Beta-Anfragen oder Partnerschaften? Kontaktiere uns direkt." />
+  <meta name="color-scheme" content="dark" />
+  <title data-lang="de">Kontakt – InboxOps</title>
+  <title data-lang="en">Contact – InboxOps</title>
+
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <img src="icon.svg" alt="InboxOps" class="logo-img" />
+        </a>
+
+        <nav class="nav-links" aria-label="Navigation">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="contact.html" class="legal-link" data-lang="de">Kontakt</a>
+          <a href="contact.html" class="legal-link" data-lang="en">Contact</a>
+          <a href="imprint.html" class="legal-link" data-lang="de">Impressum</a>
+          <a href="privacy.html" class="legal-link" data-lang="de">Datenschutz</a>
+          <a href="imprint.html" class="legal-link" data-lang="en">Legal Notice</a>
+          <a href="privacy.html" class="legal-link" data-lang="en">Privacy</a>
+        </nav>
+
+        <div class="top-controls">
+          <div class="lang" aria-label="Language switch">
+            <button id="lang-de" class="active" type="button">DE</button>
+            <button id="lang-en" type="button">EN</button>
+          </div>
+          <a class="btn primary" id="ctaTop" href="mailto:hello@inboxops.app?subject=InboxOps%20Beta%20Request">Beta
+            →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section>
+      <div class="wrap">
+        <h1 class="section-title" data-lang="de">Kontakt</h1>
+        <h1 class="section-title" data-lang="en">Contact</h1>
+
+        <p class="section-sub" data-lang="de" style="margin-bottom:40px;">
+          Fragen, Beta-Interesse oder Partnerschaften? Schreib uns direkt über das Kontaktformular.
+        </p>
+        <p class="section-sub" data-lang="en" style="margin-bottom:40px;">
+          Questions, beta access, or partnerships? Reach out directly via the contact form.
+        </p>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name" data-lang="de">Name *</label>
+            <label for="name" data-lang="en">Name *</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error-message" id="name-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email" data-lang="de">E-Mail-Adresse *</label>
+            <label for="email" data-lang="en">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error-message" id="email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="subject" data-lang="de">Betreff *</label>
+            <label for="subject" data-lang="en">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="" data-lang="de">Bitte wählen...</option>
+              <option value="" data-lang="en">Please select...</option>
+              <option value="beta" data-lang="de">Beta-Anfrage</option>
+              <option value="beta" data-lang="en">Beta Request</option>
+              <option value="pricing" data-lang="de">Fragen zu Preisen</option>
+              <option value="pricing" data-lang="en">Pricing Questions</option>
+              <option value="partnership" data-lang="de">Partnerschaft</option>
+              <option value="partnership" data-lang="en">Partnership</option>
+              <option value="support" data-lang="de">Support</option>
+              <option value="support" data-lang="en">Support</option>
+              <option value="other" data-lang="de">Sonstiges</option>
+              <option value="other" data-lang="en">Other</option>
+            </select>
+            <span class="error-message" id="subject-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message" data-lang="de">Nachricht *</label>
+            <label for="message" data-lang="en">Message *</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+            <span class="error-message" id="message-error"></span>
+            <div class="form-hint" data-lang="de">Wenn du schon weißt, was du brauchst: Teamgröße, Anzahl Inboxes, grober E-Mail-Traffic.</div>
+            <div class="form-hint" data-lang="en">If you already know your needs: team size, inbox count, rough email volume.</div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn primary" id="submit-btn">
+              <span data-lang="de">Nachricht senden</span>
+              <span data-lang="en">Send Message</span>
+            </button>
+          </div>
+
+          <div id="form-status" class="form-status" style="display: none;"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <strong>InboxOps</strong>
+          <div class="note" data-lang="de">Email-first Ticketing für Freelancer & KMUs.</div>
+          <div class="note" data-lang="en">Email-first ticketing for freelancers & small businesses.</div>
+        </div>
+        <div class="footlinks">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="contact.html" data-lang="de">Kontakt</a>
+          <a href="contact.html" data-lang="en">Contact</a>
+
+          <a href="imprint.html" data-lang="de">Impressum</a>
+          <a href="privacy.html" data-lang="de">Datenschutz</a>
+          <a href="terms.html" data-lang="de">AGB</a>
+
+          <a href="imprint.html" data-lang="en">Legal Notice</a>
+          <a href="privacy.html" data-lang="en">Privacy</a>
+          <a href="terms.html" data-lang="en">Terms</a>
+        </div>
+      </div>
+      <div class="note" style="margin-top:14px;">
+        © <span id="y"></span> InboxOps.
+        <span data-lang="de">Zahlungen sicher abgewickelt über Stripe.</span>
+        <span data-lang="en">Payments processed securely by Stripe.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+
+      function safe(id) { return document.getElementById(id); }
+
+      function setLang(lang) {
+        root.setAttribute('data-lang', lang);
+        try {
+          safe('lang-de')?.classList.toggle('active', lang === 'de');
+          safe('lang-en')?.classList.toggle('active', lang === 'en');
+          localStorage.setItem('inboxops_lang', lang);
+        } catch (e) { }
+      }
+
+      let saved = null;
+      try { saved = localStorage.getItem('inboxops_lang'); } catch (e) { }
+
+      const browser = (navigator.language || 'de').toLowerCase().startsWith('de') ? 'de' : 'en';
+      setLang(saved || browser);
+
+      safe('lang-de')?.addEventListener('click', () => setLang('de'));
+      safe('lang-en')?.addEventListener('click', () => setLang('en'));
+
+      const y = document.getElementById('y');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script>
+    // Contact Form Handling
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+
+      const submitBtn = document.getElementById('submit-btn');
+      const statusDiv = document.getElementById('form-status');
+      const errorMessages = {
+        name: document.getElementById('name-error'),
+        email: document.getElementById('email-error'),
+        subject: document.getElementById('subject-error'),
+        message: document.getElementById('message-error'),
+      };
+
+      function showStatus(message, type) {
+        statusDiv.textContent = message;
+        statusDiv.className = `form-status ${type}`;
+        statusDiv.style.display = 'block';
+        statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function hideStatus() {
+        statusDiv.style.display = 'none';
+      }
+
+      function clearErrors() {
+        Object.values(errorMessages).forEach(el => {
+          if (el) el.textContent = '';
+        });
+      }
+
+      function validateField(field) {
+        const value = field.value.trim();
+        const fieldName = field.name;
+        const errorEl = errorMessages[fieldName];
+
+        if (field.required && !value) {
+          if (errorEl) {
+            const isDe = document.documentElement.getAttribute('data-lang') === 'de';
+            errorEl.textContent = isDe ? 'Dieses Feld ist erforderlich.' : 'This field is required.';
+          }
+          return false;
+        }
+
+        if (fieldName === 'email' && value) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(value)) {
+            if (errorEl) {
+              const isDe = document.documentElement.getAttribute('data-lang') === 'de';
+              errorEl.textContent = isDe ? 'Bitte gib eine gültige E-Mail-Adresse ein.' : 'Please enter a valid email address.';
+            }
+            return false;
+          }
+        }
+
+        if (errorEl) errorEl.textContent = '';
+        return true;
+      }
+
+      function validateForm() {
+        clearErrors();
+        const fields = form.querySelectorAll('input[required], select[required], textarea[required]');
+        let isValid = true;
+
+        fields.forEach(field => {
+          if (!validateField(field)) {
+            isValid = false;
+          }
+        });
+
+        return isValid;
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        hideStatus();
+
+        if (!validateForm()) {
+          const isDe = document.documentElement.getAttribute('data-lang') === 'de';
+          showStatus(
+            isDe ? 'Bitte korrigiere die Fehler im Formular.' : 'Please correct the errors in the form.',
+            'error'
+          );
+          return;
+        }
+
+        // Disable submit button
+        submitBtn.disabled = true;
+        const isDe = document.documentElement.getAttribute('data-lang') === 'de';
+        submitBtn.innerHTML = isDe ? 'Wird gesendet...' : 'Sending...';
+        showStatus(
+          isDe ? 'Nachricht wird gesendet...' : 'Sending message...',
+          'loading'
+        );
+
+        try {
+          // Get current language
+          const currentLang = document.documentElement.getAttribute('data-lang') || 'en';
+
+          const formData = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value.trim(),
+            language: currentLang, // Include language preference
+          };
+
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+
+          const data = await response.json();
+
+          if (response.ok && data.success) {
+            showStatus(
+              isDe
+                ? 'Vielen Dank! Deine Nachricht wurde gesendet. Wir melden uns bald bei dir.'
+                : 'Thank you! Your message has been sent. We\'ll get back to you soon.',
+              'success'
+            );
+            form.reset();
+            clearErrors();
+          } else {
+            throw new Error(data.error || 'Failed to send message');
+          }
+        } catch (error) {
+          console.error('Form submission error:', error);
+          showStatus(
+            isDe
+              ? 'Fehler beim Senden der Nachricht. Bitte versuche es später erneut oder kontaktiere uns direkt per E-Mail.'
+              : 'Error sending message. Please try again later or contact us directly via email.',
+            'error'
+          );
+        } finally {
+          submitBtn.disabled = false;
+          const isDe = document.documentElement.getAttribute('data-lang') === 'de';
+          submitBtn.innerHTML = `<span data-lang="de">Nachricht senden</span><span data-lang="en">Send Message</span>`;
+        }
+      });
+
+      // Real-time validation
+      const fields = form.querySelectorAll('input, select, textarea');
+      fields.forEach(field => {
+        field.addEventListener('blur', () => validateField(field));
+        field.addEventListener('input', () => {
+          if (errorMessages[field.name]) {
+            errorMessages[field.name].textContent = '';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>
